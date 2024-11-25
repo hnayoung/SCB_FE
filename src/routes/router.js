@@ -32,6 +32,15 @@ const router = createBrowserRouter([
       </Suspense>
     ),
   },
+  {
+    path: "/login", // 로그인 경로를 별도로 추가
+    element: (
+      <Suspense fallback={<Loading />}>
+        <LoginForm />
+      </Suspense>
+    ),
+  },
+  
 ]);
 
 export default router;
