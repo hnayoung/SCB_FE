@@ -1,15 +1,10 @@
 import React, { useState } from "react";
-import "./LoginForm.scss"; 
+import axios from "axios";
+import "./LoginForm.scss";
 import { useNavigate } from "react-router-dom";
 import Home from "../home/Home"; // Home 컴포넌트를 불러옵니다.
 
 const LoginForm = () => {
-  const registeredUsers = [
-    { studentId: "202021060", password: "1234" },
-    { studentId: "987654321", password: "qwerty987" },
-    { studentId: "111222333", password: "abc123" },
-  ];
-
   const [formData, setFormData] = useState({
     studentId: "",
     password: "",
@@ -38,18 +33,32 @@ const LoginForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      const user = registeredUsers.find(
-        (u) =>
-          u.studentId === formData.studentId && u.password === formData.password
-      );
-      if (user) {
-        alert("로그인 성공!");
-        setIsLoggedIn(true); // 로그인 상태를 true로 설정
-      } else {
-        setErrors({ login: "학번 또는 비밀번호가 일치하지 않습니다." });
+      try {
+        const response = await axios.post(
+          "https://port-0-scb-be-m5p35c12a9749b96.sel4.cloudtype.app/users/login/", // 실제 로그인 엔드포인트로 변경
+          {
+            studentId: formData.studentId,
+            password: formData.password,
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        if (response.status === 200) {
+          alert("로그인 성공!");
+          setIsLoggedIn(true); // 로그인 상태를 true로 설정
+        } else {
+          setErrors({ login: "학번 또는 비밀번호가 일치하지 않습니다." });
+        }
+      } catch (error) {
+        console.error("서버와의 통신 중 오류 발생:", error);
+        setErrors({ login: "로그인 요청 중 오류가 발생했습니다." });
       }
     }
   };
