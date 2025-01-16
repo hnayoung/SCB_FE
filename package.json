@@ -23,7 +23,7 @@
     "styled-reset": "^4.5.2",
     "web-vitals": "^2.1.4"
   },
-  "proxy": "https://sozerong.pythonanywhere.com/random",
+  "proxy": "https://port-0-scb-be-m5p35c12a9749b96.sel4.cloudtype.app/swagger/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
