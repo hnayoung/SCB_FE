@@ -1,15 +1,25 @@
 import React, { lazy, Suspense } from "react";
-import { createBrowserRouter } from "react-router-dom";
 import Loading from "../components/Loading";
-// import Layout from "../pages/layout/Layout";
+import { createBrowserRouter } from 'react-router-dom';
+import MainLayout from "../pages/components/Mainlayout";
 
 const LoginForm = lazy(() => import("../pages/login/LoginForm"));
 const SignupForm = lazy(() => import("../pages/signup/SignupForm"));
-const Home = lazy(() => import("../pages/home/Home"));
+const CodeReview = lazy(() => import("../pages/codeReview/CodeReview"));
+const Community = lazy(() => import("../pages/components/Community")); // 커뮤니티 컴포넌트 import
+const CommentDetail = lazy(() => import("../pages/comments/CommentDetail")); // 댓글 상세 컴포넌트 import
 
 const router = createBrowserRouter([
   {
-    path: "/", // 기본 경로를 로그인 페이지로 설정
+    path: "/",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <MainLayout /> {/* MainLayout을 홈으로 설정 */}
+      </Suspense>
+    ),
+  },
+  {
+    path: "/login",
     element: (
       <Suspense fallback={<Loading />}>
         <LoginForm />
@@ -25,22 +35,29 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/home", // Home 경로를 별도로 추가
+    path: "/code-review",
     element: (
       <Suspense fallback={<Loading />}>
-        <Home />
+        <CodeReview />
       </Suspense>
     ),
   },
   {
-    path: "/login", // 로그인 경로를 별도로 추가
+    path: "/community/:communityName", // 커뮤니티 경로 추가
     element: (
       <Suspense fallback={<Loading />}>
-        <LoginForm />
+        <Community />
       </Suspense>
     ),
   },
-  
+  {
+    path: "/comment/:id", // 댓글 ID에 대한 경로 추가
+    element: (
+      <Suspense fallback={<Loading />}>
+        <CommentDetail />
+      </Suspense>
+    ),
+  },
 ]);
 
 export default router;

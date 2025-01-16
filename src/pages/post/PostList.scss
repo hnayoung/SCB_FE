@@ -1,0 +1,28 @@
+.post-list {
+  margin: 20px;
+}
+
+.loading,
+.error {
+  color: red;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.post-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.post-item h2 {
+  margin: 0;
+  color: #007bff; /* 링크 색상 */
+  text-decoration: none;
+}
+
+.post-item h2:hover {
+  text-decoration: underline; /* 링크에 호버 효과 */
+}
