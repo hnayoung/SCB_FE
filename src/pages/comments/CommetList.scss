@@ -1,0 +1,67 @@
+.comment-list {
+  margin: 20px 0;
+}
+
+.loading,
+.error {
+  color: red;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.comment-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.submit-button,
+.cancel-button,
+.edit-button,
+.delete-button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.cancel-button {
+  background-color: #ccc;
+}
+
+.edit-button {
+  background-color: #ffcc00;
+  color: black;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.submit-button:hover,
+.cancel-button:hover,
+.edit-button:hover,
+.delete-button:hover {
+  opacity: 0.8;
+}

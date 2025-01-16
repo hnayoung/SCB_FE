@@ -1,0 +1,34 @@
+.community-detail {
+  margin: 20px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around; /* 탭 버튼을 균등하게 배치 */
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &.active {
+      background-color: #007bff; /* 활성화된 탭의 색상 */
+      color: white; /* 텍스트 색상 */
+  }
+
+  &:hover {
+      background-color: #e0e0e0; /* 호버 시 색상 변화 */
+  }
+}
+
+.content {
+  padding: 20px;
+  border: 1px solid #ccc; /* 콘텐츠 구분선 */
+  border-radius: 5px;
+  background-color: #fafafa; /* 배경색 */
+}
