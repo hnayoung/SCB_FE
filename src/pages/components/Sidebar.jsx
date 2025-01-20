@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Mainlayout.scss';
 
 const Sidebar = ({ onSelectCommunity, handleHomeClick, handleCodeReviewClick }) => {
+    const navigate = useNavigate();
     const [showSubItems, setShowSubItems] = useState(false);
 
     const handleToggle = () => {
@@ -11,12 +12,15 @@ const Sidebar = ({ onSelectCommunity, handleHomeClick, handleCodeReviewClick }) 
 
     const handleCommunitySelect = (community) => {
         onSelectCommunity(community); // 커뮤니티 선택 처리
-        // 서브 메뉴를 닫지 않음
+    };
+
+    const handleProfileClick = () => {
+        navigate('/mypage'); // 마이페이지로 이동
     };
 
     return (
         <div className="sidebar">
-            <div className="profile">
+            <div className="profile" onClick={handleProfileClick}>
                 <span>👤</span> Profile
             </div>
             <div className="menu-item" onClick={handleHomeClick}>

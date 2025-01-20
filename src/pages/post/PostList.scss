@@ -1,28 +1,32 @@
 .post-list {
-  margin: 20px;
+  padding: 16px; // 전체 패딩
 }
 
-.loading,
-.error {
-  color: red;
-  text-align: center;
-  font-size: 1.2em;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); // 자동으로 열을 생성
+  gap: 16px; // 카드 간의 간격
 }
 
-.post-item {
-  margin-bottom: 20px;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+.post-card {
+  background: #fff; // 카드 배경
+  border: 1px solid #ddd; // 테두리
+  border-radius: 8px; // 둥근 모서리
+  padding: 16px; // 카드 내부 패딩
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // 그림자 효과
+  transition: transform 0.2s; // 호버 시 효과 부드럽게
 }
 
-.post-item h2 {
-  margin: 0;
-  color: #007bff; /* 링크 색상 */
-  text-decoration: none;
+.post-card:hover {
+  transform: translateY(-4px); // 호버 시 약간 위로 이동
 }
 
-.post-item h2:hover {
-  text-decoration: underline; /* 링크에 호버 효과 */
+.post-card h2 {
+  font-size: 1.2em; // 제목 크기
+  margin: 8px 0; // 마진
+}
+
+.post-card p {
+  font-size: 0.9em; // 설명 크기
+  color: #666; // 설명 색상
 }

@@ -10,7 +10,7 @@ const SignupForm = () => {
     username: "",
     email: "",
     password: "",
-    confirmPassword: "", // password2에 해당
+    password2: "", // password2로 변경
   });
 
   const [errors, setErrors] = useState({});
@@ -37,8 +37,8 @@ const SignupForm = () => {
     } else if (!passwordReg.test(formData.password)) {
       newErrors.password = "비밀번호는 영문, 숫자를 포함하여 8~25자이어야 합니다.";
     }
-    if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = "비밀번호가 일치하지 않습니다.";
+    if (formData.password !== formData.password2) { // password2로 변경
+      newErrors.password2 = "비밀번호가 일치하지 않습니다.";
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -55,7 +55,7 @@ const SignupForm = () => {
             username: formData.username,
             email: formData.email,
             password: formData.password,
-            password2: formData.confirmPassword,
+            password2: formData.password2, // password2로 전송
           },
           {
             headers: {
@@ -120,12 +120,12 @@ const SignupForm = () => {
         <label>비밀번호 확인</label>
         <input
           type="password"
-          name="confirmPassword"
-          value={formData.confirmPassword}
+          name="password2" // password2로 설정
+          value={formData.password2} // password2로 설정
           onChange={handleChange}
         />
-        {errors.confirmPassword && (
-          <span className="error-text">{errors.confirmPassword}</span>
+        {errors.password2 && ( // password2에 대한 에러 메시지
+          <span className="error-text">{errors.password2}</span>
         )}
       </div>
 

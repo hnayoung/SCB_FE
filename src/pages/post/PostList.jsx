@@ -32,18 +32,18 @@ const PostList = () => {
       {posts.length === 0 ? (
         <p>게시물이 없습니다.</p>
       ) : (
-        <ul>
+        <div className="grid-container">
           {posts.map((post) => (
-            <li key={post.id} className="post-item">
+            <div key={post.id} className="post-card">
               <Link to={`/post/${post.id}`}>
                 <h2>{post.title}</h2>
               </Link>
               <p>작성자: {post.created_by_username}</p>
               <p>학번: {post.school_id}</p>
               <p>작성일: {new Date(post.date_created).toLocaleDateString()}</p>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );
