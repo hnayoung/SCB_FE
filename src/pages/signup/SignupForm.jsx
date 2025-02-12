@@ -61,6 +61,7 @@ const SignupForm = () => {
             headers: {
               "Content-Type": "application/json",
             },
+            withCredentials: true, // 쿠키 전송을 위한 옵션
           }
         );
 

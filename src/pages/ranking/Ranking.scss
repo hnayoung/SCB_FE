@@ -1,0 +1,92 @@
+.ranking-container {
+  padding: 20px;
+  margin-top: 80px; /* ✅ Navbar 높이만큼 띄우기 */
+}
+
+.ranking-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px; /* ✅ 제목과 리스트 사이 여백 추가 */
+}
+
+.ranking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ranking-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+}
+
+.ranking-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.rank-number {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ✅ 공유 버튼 스타일 */
+.share-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  .share-icon {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* ✅ 좋아요 버튼 스타일 */
+.like-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.ranking-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly; /* ✅ 간격 균등 배치 */
+  width: 100%;
+  gap: 15px; /* 추가 여유 공간 */
+}
+
+.title, .category, .score {
+  flex-grow: 1; /* ✅ 각 요소가 균등한 공간 차지 */
+  text-align: center; /* ✅ 텍스트 중앙 정렬 */
+}
