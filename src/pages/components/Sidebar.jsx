@@ -5,9 +5,14 @@ import './Mainlayout.scss';
 const Sidebar = ({ onSelectCommunity, handleHomeClick, handleCodeReviewClick }) => {
     const navigate = useNavigate();
     const [showSubItems, setShowSubItems] = useState(false);
+    const [showProfileSubItems, setShowProfileSubItems] = useState(false); // 마이페이지 서브 메뉴 상태 추가
 
     const handleToggle = () => {
-        setShowSubItems(!showSubItems); // 서브 메뉴의 열림/닫힘 상태 토글
+        setShowSubItems(!showSubItems); // 커뮤니케이션 서브 메뉴의 열림/닫힘 상태 토글
+    };
+
+    const handleProfileToggle = () => {
+        setShowProfileSubItems(!showProfileSubItems); // 마이페이지 서브 메뉴의 열림/닫힘 상태 토글
     };
 
     const handleCommunitySelect = (community) => {
@@ -20,9 +25,19 @@ const Sidebar = ({ onSelectCommunity, handleHomeClick, handleCodeReviewClick }) 
 
     return (
         <div className="sidebar">
-            <div className="profile" onClick={handleProfileClick}>
+            <div className="profile" onClick={handleProfileToggle}>
                 <span>👤</span> Profile
+                <span className="dropdown" onClick={handleProfileToggle}>
+                    {showProfileSubItems ? '▲' : '▼'}
+                </span>
             </div>
+            {showProfileSubItems && (
+                <div className="sub-menu">
+                    <div className="sub-menu-item" onClick={handleProfileClick}>
+                        마이페이지
+                    </div>
+                </div>
+            )}
             <div className="menu-item" onClick={handleHomeClick}>
                 <span>🏠</span> Home
             </div>
