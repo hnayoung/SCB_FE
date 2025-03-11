@@ -10,6 +10,7 @@ const CodeReview = lazy(() => import("../pages/codeReview/CodeReview"));
 const Community = lazy(() => import("../pages/components/Community")); // 커뮤니티 컴포넌트 import
 const CommentDetail = lazy(() => import("../pages/comments/CommentDetail")); // 댓글 상세 컴포넌트 import
 const MyPage = lazy(() => import("../pages/mypage/MyPage")); // 마이페이지 컴포넌트 import
+const Board = lazy(() => import("../pages/board/Board")); // 게시판 컴포넌트 import
 
 const router = createBrowserRouter([
   {
@@ -73,6 +74,14 @@ const router = createBrowserRouter([
     element: (
       <Suspense fallback={<Loading />}>
         <Ranking />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/board",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <Board />
       </Suspense>
     ),
   },
