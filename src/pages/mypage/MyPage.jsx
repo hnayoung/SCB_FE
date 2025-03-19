@@ -1,71 +1,65 @@
-import React, { useEffect, useState } from 'react';
-import { fetchUserProfile, fetchUserProjects } from '../services/profile'; // API 함수 임포트
+import React, { useState } from 'react';
+import Navbar from '../components/Navbar';
 import './MyPage.scss';
 
 const MyPage = () => {
-    const [userInfo, setUserInfo] = useState(null);
-    const [projects, setProjects] = useState([]); // 프로젝트 상태 추가
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+  const [profileImage, setProfileImage] = useState('https://github.com/hnayoung/scb_image/blob/main/share.png?raw=true');
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                // 사용자 프로필 조회
-                const profileResponse = await fetchUserProfile('YOUR_USERNAME'); // username을 여기에 입력
-                setUserInfo(profileResponse);
-
-                // 사용자 프로젝트 조회
-                const projectsResponse = await fetchUserProjects(profileResponse.username); // username을 기반으로 프로젝트 조회
-                setProjects(projectsResponse);
-            } catch (err) {
-                console.error('프로필 정보를 불러오는 데 실패했습니다:', err);
-                setError('프로필 정보를 불러오는 데 실패했습니다.');
-            } finally {
-                setLoading(false);
-            }
+  const handleImageChange = () => {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+    input.onchange = (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          setProfileImage(event.target.result);
         };
+        reader.readAsDataURL(file);
+      }
+    };
+    input.click();
+  };
 
-        fetchData();
-    }, []);
-
-    if (loading) return <div className="loading">로딩 중...</div>;
-    if (error) return <div className="error">{error}</div>;
-
-    return (
-        <div className="my-page">
-            <h1>My Page</h1>
-            <div className="profile-section">
-                <div className="profile-pic">
-                    <img src={userInfo.image || 'https://port-0-scb-be-m5p35c12a9749b96.sel4.cloudtype.app/media/default.png'} alt={`${userInfo.username}'s profile`} />
-                </div>
-                <div className="user-info">
-                    <p>{userInfo.nickname || userInfo.username}</p>
-                    <p>{userInfo.range || 'N/A'}</p>
-                    <input type="text" placeholder="github 아이디" defaultValue={userInfo.code || ''} />
-                    <input type="email" placeholder="이메일 주소" defaultValue={userInfo.email || ''} />
-                </div>
-            </div>
-            <div className="projects-section">
-                <h2>My Projects</h2>
-                <ul>
-                    {projects.length > 0 ? (
-                        projects.map((project) => (
-                            <li key={project.id}> {/* 고유 키 prop 추가 */}
-                                {project.name} <span>{project.visibility}</span>
-                            </li>
-                        ))
-                    ) : (
-                        <li>프로젝트가 없습니다.</li>
-                    )}
-                </ul>
-            </div>
-            <div className="review-section">
-                <h2>My Review</h2>
-                <textarea placeholder="리뷰를 작성하세요..." />
-            </div>
+  return (
+    <div className="board-container">
+      <Navbar />
+      <div className="profile-section">
+        <div className="profile-picture">
+          <img src={profileImage} alt="프로필" />
+          <button className="change-image-button" onClick={handleImageChange}>+</button>
         </div>
-    );
+        <div className="profile-info">
+          <p>202021060/스정통/박근표</p>
+          <input type="text" placeholder="github 아이디" />
+          <input type="text" placeholder="이메일 주소" />
+          <input type="text" placeholder="분야" />
+        </div>
+      </div>
+      <div className="projects-reviews-section">
+        <div className="projects-section">
+          <h3>My project</h3>
+          <div className="projects">
+            <div className="project-card">noonaproject <span>Public</span> <span>JavaScript</span></div>
+            <div className="project-card">noonaproject-weather <span>Public</span> <span>JavaScript</span></div>
+            <div className="project-card">noona-hmm <span>Public</span> <span>JavaScript</span></div>
+            <div className="project-card">kpass-front <span>Public</span> <span>JavaScript</span></div>
+            <div className="project-card">kpass-back <span>Public</span> <span>JavaScript</span></div>
+            <div className="project-card">egproject <span>Public</span> <span>JavaScript</span></div>
+          </div>
+        </div>
+        <div className="review-section">
+          <h3>My review</h3>
+          <div className='reviews'>
+            <div className="review-card"><span></span> <span></span></div>
+            <div className="review-card"><span></span> <span></span></div>
+          </div>
+          <button className="add-review-button">+</button>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default MyPage;

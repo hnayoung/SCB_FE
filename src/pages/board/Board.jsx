@@ -1,14 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import './Board.scss';
 
 const Board = () => {
+  const [profileImage, setProfileImage] = useState('https://github.com/hnayoung/scb_image/blob/main/share.png?raw=true');
+
+  const handleImageChange = () => {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+    input.onchange = (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          setProfileImage(event.target.result);
+        };
+        reader.readAsDataURL(file);
+      }
+    };
+    input.click();
+  };
+
   return (
     <div className="board-container">
       <Navbar />
       <div className="profile-section">
         <div className="profile-picture">
-          <img src="https://github.com/hnayoung/scb_image/blob/main/share.png?raw=true" alt="프로필" />
+          <img src={profileImage} alt="프로필" />
+          <button className="change-image-button" onClick={handleImageChange}>+</button>
         </div>
         <div className="profile-info">
           <p>202021060/스정통/박근표</p>
@@ -19,7 +39,6 @@ const Board = () => {
       </div>
       <div className="projects-reviews-section">
         <div className="projects-section">
-          <div className='left-border'></div>
           <h3>My project</h3>
           <div className="projects">
             <div className="project-card">noonaproject <span>Public</span> <span>JavaScript</span></div>
@@ -32,7 +51,10 @@ const Board = () => {
         </div>
         <div className="review-section">
           <h3>My review</h3>
-          <textarea placeholder="리뷰를 입력하세요..."></textarea>
+          <div className='reviews'>
+            <div className="review-card"><span></span> <span></span></div>
+            <div className="review-card"><span></span> <span></span></div>
+          </div>
           <button className="add-review-button">+</button>
         </div>
       </div>
