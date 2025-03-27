@@ -1,0 +1,92 @@
+.writeboard-container { //전체 컨터이너 
+    max-width: 800px;
+    margin: auto; //가운데 정렬
+    padding: 20px;
+    padding-bottom: 80px; // 버튼과 겹치지 않도록 여백 추가
+
+    .writeboard-h2 { //제목 스타일 
+      font-size: 24px;
+      font-weight: bold; //굵은 글씨체 적용
+      margin-bottom: 10px;
+    }
+
+    .writeboard-title-input { // 제목 입력창 
+        margin-top: 50px;
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        font-size: 18px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .writeboard-tag-input { //태그 입력창
+        margin-top: 10px;
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        font-size: 18px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    .writeboard-school_id-input { //학번 입력창 
+        margin-top: 10px;
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        font-size: 18px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    .writeboard-quill { //에디터 스타일 
+        width: 100%;
+        max-width: 100%;
+        min-height: 300px;
+        margin-bottom: 20px;
+
+        .ql-container {
+            width: 100% !important;
+            //에디터가 전체 너비 차지하게 강제 적용, !important-> Quill 기본 스타일 덮어쓰기
+        }
+
+        .ql-editor {
+            min-height: 250px;
+        }
+    }
+
+    .writeboard-button-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        //위쪽 반향(-2px)으로 약간의 그림자를 만들어서 버튼이 떠 있는 연출
+    }
+
+    .writeboard-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+
+        &.writeboard-exit {
+            background: none;
+            color: #777;
+        }
+
+        &.writeboard-save {
+            background-color: #6666cc;
+            color: #fff;
+            margin-right: 10px;
+        }
+    }
+}

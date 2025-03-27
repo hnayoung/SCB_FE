@@ -1,0 +1,130 @@
+.main-layout {
+  display: flex;
+  height: 100vh; /* 전체 화면 높이 설정 */
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  height: 100%; /* 사이드바를 전체 높이로 설정 */
+}
+
+.sidebar .profile {
+  margin-bottom: 20px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.menu-item span {
+  margin-right: 10px;
+}
+
+.sub-menu {
+  margin-left: 20px;
+  padding: 10px;
+  background-color: #444;
+  border-radius: 4px;
+}
+
+.sub-menu-item {
+  color: white;
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+.main-content {
+  flex-grow: 1;
+  background-color: #f4f4f4;
+  padding: 0; /* 패딩 제거 */
+  height: 100%; /* 메인 콘텐츠를 전체 높이로 설정 */
+  display: flex;
+  flex-direction: column; /* 내용 세로 방향으로 정렬 */
+}
+
+.navbar {
+  color: white;
+  padding: 20px;
+  height: 60px; /* 바 높이 설정 */
+  display: flex;
+  align-items: center; /* 텍스트 중앙 정렬 */
+}
+
+.main-content-area {
+  flex-grow: 1; /* 남은 공간을 차지하도록 설정 */
+  padding: 20px; /* 내용 패딩 추가 */
+}
+
+.post-list {
+  padding: 20px; /* PostList 내부 패딩 */
+}
+
+.post-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.post-item h3 {
+  color: blue; /* 제목 색상 */
+}
+
+.loading, .error {
+  color: red; /* 로딩 및 오류 메시지 색상 */
+}
+
+.work-list {
+  display: flex;
+  flex-direction: column; /* ✅ 세로 정렬 */
+  align-items: center;
+  padding: 120px;
+}
+
+/* 카테고리 이름을 한 줄로 정렬 */
+.category-row {
+  display: flex;
+  justify-content: center; /* ✅ 가로 정렬 */
+  gap: 148px;
+  width: 100%;
+  padding-bottom: 50px;
+  margin-top: 50px;
+}
+
+.category-box {
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  width: 15%; /* ✅ 동일한 너비 적용 */
+  gap: 15px;
+  min-width: 250px;
+}
+
+/* 작품 목록을 같은 열에 표시 */
+.work-grid-row {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+}
+
+.work-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 35px;
+  width: 30%; /* ✅ 카테고리와 같은 너비 설정 */
+  min-width: 250px;
+}

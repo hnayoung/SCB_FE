@@ -20,7 +20,7 @@ const Navbar = () => {
         <li><Link to="/community">커뮤니티</Link></li>
         <li><Link to="/codereview">코드 분석</Link></li>
         <li><Link to="/ranking">랭킹</Link></li>
-        <li><Link to="/settings" className="stjt">스정통</Link></li>
+        {/* <li><Link to="/settings" className="stjt">스정통</Link></li> */}
         <li><Link to="/mypage">마이페이지</Link></li>
         <button className='login'>로그인</button>
       </ul>
