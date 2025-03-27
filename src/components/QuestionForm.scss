@@ -1,0 +1,91 @@
+.question-item {
+    list-style: none;
+    position: relative; 
+    width: 90%;
+    height: 200px;
+    border-radius: 10px; 
+    margin : 30px 50px 0 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding:  20px 0 5px 20px;
+}
+    
+.question-link {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  .question-title {
+    font-size: 18px;
+    position: relative;
+  }
+  
+  .question-content {
+    font-size: 14px;
+    color: #757778;
+    margin: 5px 0 40px 5px;
+  }
+  
+  .question-meta-category {
+    font-size: 14px;
+    color:#A0A7AD;
+  }
+
+  /* 작성자 정보 */
+  .question-author {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .author-avatar {
+    font-size: 10px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ddd; /* 프로필 이미지 자리 */
+    margin-right: 10px;
+  }
+  
+  .author-name {
+    font-size: 14px;
+  }
+  
+  /* 오른쪽 질문 이미지 */
+  .question-image {
+    display: flex;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    top: 20px;
+    right: 20px;    
+  }
+  
+  .question-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .image-placeholder {
+    width: 100px;
+    height: 100px;
+    background-color: blue; /* 파란색 박스 */
+    border-radius: 8px;
+  }
+  
+  /* 질문 하단 정보 */
+  .question-stats {
+    position: absolute;
+    top: 128px;
+    right: 10px;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #999;
+  }
