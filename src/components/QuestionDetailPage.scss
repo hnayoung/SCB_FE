@@ -90,15 +90,14 @@ hr {
 }
 
 .sidebar {
-  list-style: none;
-  padding: 0;
-  width: 100%;
-  background: white; /* 🔹 배경색이 다른 영역과 겹칠 경우 대비 */
-  border-right: none; /* 🔹 오른쪽 테두리 제거 */
-  border-bottom: none; /* 🔹 아래쪽 테두리 제거 */
-  box-shadow: none  !important; /* 🔹 혹시라도 적용된 그림자 제거 */
+  width: 250px;
+  background: white;
+  padding: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: none;
 }
-
 
 .sidebar ul {
   list-style: none;

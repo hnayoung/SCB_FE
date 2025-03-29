@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Community from "./Community";
+// import Community from "./Community";
 import "./QuestionModal.scss";
 
 const QuestionModal = ({ isOpen, onClose, category, onSubmit }) => {
@@ -160,13 +160,13 @@ const QuestionModal = ({ isOpen, onClose, category, onSubmit }) => {
         {/* 아이콘 버튼 */}
         <div className="toolbar">
           <button>
-            <img src="https://github.com/hnayoung/scb_image/blob/main/keyboard_code.png?raw=true"></img>
+            <img src="https://github.com/hnayoung/scb_image/blob/main/keyboard_code.png?raw=true" alt="1"></img>
           </button>
           <button className="icon2">
-            <img src="https://github.com/hnayoung/scb_image/blob/main/keyboard_gallery.png?raw=true"></img>
+            <img src="https://github.com/hnayoung/scb_image/blob/main/keyboard_gallery.png?raw=true" alt="2"></img>
           </button>
           <button>
-          <img src="https://github.com/hnayoung/scb_image/blob/main/keyboard_file.png?raw=true"></img>
+          <img src="https://github.com/hnayoung/scb_image/blob/main/keyboard_file.png?raw=true" alt="3"></img>
           </button>
         </div>
 

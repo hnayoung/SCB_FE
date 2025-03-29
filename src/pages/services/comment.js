@@ -1,5 +1,5 @@
 import api from '../api/api';
-import { updateBoard } from './board'; // 오타 수정
+// import { updateBoard } from './board'; // 오타 수정
 
 // 전체 댓글 목록 조회
 export const fetchAllComments = async () => {
