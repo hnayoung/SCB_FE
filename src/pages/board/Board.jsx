@@ -17,7 +17,7 @@ const Board = () => {
         </div>
 
         <div className="content-wrapper">
-          <a href="#">
+          <a href="#5">
             <img
               src="https://cdn3.wadiz.kr/studio/images/2024/07/29/4e825eaf-86f6-4a13-bf1c-856e9cbe29aa.jpeg/wadiz/resize/400/format/jpg/quality/85/"
               alt="하루10분"
@@ -33,7 +33,7 @@ const Board = () => {
             </div>
           </a>
 
-          <a href="#">
+          <a href="#6">
             <img
               src="https://cdn3.wadiz.kr/studio/images/2024/07/15/e87c4ab7-eac9-4404-8c43-5690a5d237b6.jpeg/wadiz/resize/400/format/jpg/quality/85/"
               alt="텀블러"
@@ -49,7 +49,7 @@ const Board = () => {
             </div>
           </a>
 
-          <a href="#">
+          <a href="#7">
             <img
               src="https://cdn3.wadiz.kr/studio/images/2024/07/29/862facc1-764f-4ea1-b13e-f7a231e2a86a.jpeg/wadiz/resize/400/format/jpg/quality/85/"
               alt="영어"
@@ -65,7 +65,7 @@ const Board = () => {
             </div>
           </a>
 
-          <a href="#">
+          <a href="#8">
             <img
               src="https://cdn3.wadiz.kr/studio/images/2024/07/03/d0ebedeb-99a8-4ca0-b428-8c1e79c83e58.jpeg/wadiz/resize/400/format/jpg/quality/85/"
               alt="보조배터리"
@@ -79,7 +79,7 @@ const Board = () => {
             </div>
           </a>
 
-          <a href="#">
+          <a href="#9">
             <img
               src="https://cdn3.wadiz.kr/studio/images/2024/07/29/4d83c001-0354-4e2b-8de1-3648c4720e04.jpeg/wadiz/resize/400/format/jpg/quality/85/"
               alt="마즈마즈게임"
@@ -95,7 +95,7 @@ const Board = () => {
             </div>
           </a>
 
-          <a href="#">
+          <a href="#10">
             <img
               src="https://cdn3.wadiz.kr/studio/images/2024/07/29/d516d8fb-c59f-4ae9-bc9f-2c18c9793205.jpeg/wadiz/resize/400/format/jpg/quality/85/"
               alt="가방"
